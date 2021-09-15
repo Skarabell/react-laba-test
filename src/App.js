@@ -67,7 +67,7 @@ class App extends Component {
         const pageSize = 10;
         const filteredData = this.getFilteredData();
         const pageCount = Math.ceil(filteredData.length / pageSize)
-        const displayData = _.chunk(filteredData, pageSize)[this.state.currentPage]
+        const displayData = _.chunk(this.state.data, pageSize)[this.state.currentPage]
 
         return (
             <div className="container">
@@ -100,7 +100,6 @@ class App extends Component {
                             pageRangeDisplayed={5}
                             onPageChange={this.pageChangeHandler}
                             containerClassName={'pagination'}
-                            subContainerClassName={'pages pagination'}
                             activeClassName={'active'}
                             pageClassName="page-item"
                             pageLinkClassName="page-link"
